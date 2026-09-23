@@ -133,3 +133,83 @@ Begin Phase 1 with keyboard geometry and ergonomics. In parallel, quantify Conte
 - `docs/04_ROADMAP.md`
 - `docs/05_DESIGN_DECISIONS.md`
 - `docs/07_RESEARCH_BACKLOG.md`
+
+---
+
+## 2026-09-23 — Context selector consolidated into push rotary encoder
+
+**Area:** Product interaction / architecture / ergonomics
+
+**Objective:**  
+Simplify the DVN-65 control area and recover top-surface space for a larger Context Display while preserving direct on-device context selection.
+
+**Result:**  
+The previous requirement for a separate physical context selector is superseded. Rev 1 will use the **Context Display + push rotary encoder** as the primary local control interface.
+
+Interaction direction:
+- encoder rotation navigates menus or adjusts the selected value
+- encoder press selects/confirms or enters the on-device interface
+- WRITE / CODE / DEV / GAME / CUSTOM can be selected through this interface
+- volume, functional-lighting intensity, profiles and future controls may share the same interface
+- exact short-press / long-press behavior remains to be prototyped
+
+Mechanical direction:
+- Context Display above
+- push rotary encoder below
+- no dedicated mode-selector mechanism
+- recovered upper control-area space should be used to increase useful display area where practical
+
+**Decision impact:**  
+- The physical context-selector requirement recorded in the Phase 0 baseline is **SUPERSEDED** by this entry.
+- Remove dedicated selector hardware, I/O and mechanical integration from Rev 1 requirements.
+- Context Display becomes the primary visual indicator of active context.
+- Push rotary encoder becomes the primary local input for context selection and display navigation.
+
+**Next step:**  
+Refine the G1R+ control island with the display at the upper edge and the push rotary encoder below, then prototype the interaction flow.
+
+
+---
+
+## 2026-09-23 — G1R+ v5 geometry candidate
+
+**Area:** Ergonomics / mechanical / product interaction
+
+**Objective:**  
+Refine the Phase 1 keyboard geometry into a single printable candidate that preserves ISO-ES familiarity while testing a moderate ergonomic opening and integrating the Context Display + push rotary encoder control area.
+
+**Result:**  
+The **G1R+ v5** geometry was selected as the current working candidate for physical validation.
+
+Geometry direction:
+- approximately 65%
+- ISO-ES familiar letter positions and ISO Enter
+- unibody semi-split
+- 6° rotation per half / 12° total opening
+- conventional row stagger
+- split Space for geometry purposes, with both halves acting as Space
+- physical arrow cluster retained
+- dedicated Del / PgUp / PgDn / Home / End removed and moved to Fn-layer access
+
+Control-area direction:
+- Context Display at the upper edge of the right control area
+- enlarged display reservation compared with earlier iterations
+- push rotary encoder below the display
+- no dedicated context-selector hardware
+
+Printable 1:1 A3 and tiled A4 templates were generated for physical posture and reach testing.
+
+**Conclusion:**  
+G1R+ v5 is the strongest current Phase 1 candidate, but remains experimental until validated physically. The geometry must not yet be treated as a final PCB or case commitment.
+
+**Decision impact:**  
+- G1R+ v5 becomes the baseline for the next geometry/mechanical refinement iteration.
+- Final geometry remains **TBD — Research Required**.
+
+**Next step:**  
+Validate the 1:1 template physically, then refine the outer case contour, display integration, encoder placement and overall dimensions.
+
+**References / files:**  
+- `assets/geometry/phase1/DVN65_G1Rplus_v5_A3_1to1.pdf`
+- `assets/geometry/phase1/DVN65_G1Rplus_v5_A4_Tiled_1to1.pdf`
+

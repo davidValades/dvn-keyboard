@@ -60,22 +60,19 @@ Research:
 
 Success criteria must be defined before testing.
 
-## 4. Physical context selector
-Compare:
-- slider
-- rotary selector
-- multi-position switch
-- alternative tactile mechanisms
+## 4. Context control / push rotary encoder UX
+The dedicated physical mode selector has been removed from the Rev 1 direction. Context selection and local device navigation will use the Context Display + push rotary encoder.
 
-Evaluate:
-- tactile clarity
-- physical state visibility
-- durability
-- size
-- availability
-- cost
-- electrical complexity
-- CAD integration
+Research:
+- encoder detent feel and resolution
+- push force and durability
+- rotate / press navigation model
+- short-press vs long-press behavior
+- accidental activation prevention
+- menu depth and discoverability
+- rapid access to context, volume and lighting controls
+- firmware state model and feedback timing
+- accessibility and use without resident PC software
 
 ## 5. DVN Context Display
 The display itself is part of the Rev 1 direction; implementation is not decided.
@@ -106,7 +103,7 @@ Determine:
 - unit-cost impact
 
 Constraint:
-the display must complement, not replace, the physical context selector.
+the display must make the active context clear and provide immediate feedback for encoder navigation and adjustments.
 
 ## 6. CAD tool
 Compare open-source-friendly tools for:
@@ -155,7 +152,7 @@ Determine:
 - GPIO requirements
 - diode orientation
 - module I/O impact
-- mode-selector I/O impact
+- push-encoder I/O impact
 - encoder I/O impact
 - Context Display interface impact
 

@@ -74,7 +74,14 @@ Rev 1 should include a small integrated contextual display near the encoder/cont
 
 Its minimum role is to show active context and temporary encoder/status feedback. It may also show profile information and simple user-configurable icons or a lightweight mascot.
 
-The display complements the physical context selector and does not replace it.
+The display and push rotary encoder together form the primary on-device context-control interface.
+
+## Context control interface
+Rev 1 will not use a separate physical mode selector.
+
+WRITE / CODE / DEV / GAME / CUSTOM selection, on-device menu navigation and adjustable controls will be integrated through the Context Display and a push rotary encoder. The display provides the visual state; encoder rotation navigates or changes values; encoder press selects/confirms or enters the interface.
+
+Exact menu shortcuts and short-press / long-press behavior remain to be validated.
 
 ## Firmware direction
 QMK as base, with DVN-specific extensions.
@@ -127,6 +134,22 @@ The original legend may remain visible; the secondary legend must clearly appear
 ## Unibody semi-split / moderate column stagger
 Potential ergonomic direction if benefits justify the additional complexity.
 
+## G1R+ v5 geometry candidate
+Current Phase 1 working candidate for physical validation.
+
+Direction:
+- approximately 65% ISO-ES
+- unibody semi-split
+- 6° per half / 12° total opening
+- conventional row stagger
+- split space with both halves acting as Space during geometry testing
+- physical arrow cluster retained
+- dedicated Del / PgUp / PgDn / Home / End removed in favor of Fn-layer access
+- Context Display at the upper edge of the right control area
+- push rotary encoder below the display
+
+This is an **experimental geometry candidate**, not the final geometry decision. It must be validated with 1:1 physical testing before PCB/mechanical commitment.
+
 ## Thumb cluster
 May replace or divide parts of a traditional long spacebar if it improves ergonomics without imposing a large learning curve.
 
@@ -136,9 +159,6 @@ May replace or divide parts of a traditional long spacebar if it improves ergono
 
 ## Final geometry
 Conventional 65% vs unibody semi-split vs moderate stagger.
-
-## Mode selector
-Slider, rotary selector or another mechanism.
 
 ## MCU
 Must be selected after real I/O and memory requirements are known.
@@ -209,6 +229,12 @@ Reason:
 Adds RF, battery, charging and firmware complexity before core DVN concepts are validated.
 
 May be reconsidered in a future revision.
+
+## Dedicated physical context selector
+Reason:
+A separate slider or selector duplicates functionality that can be provided by the Context Display + push rotary encoder interface while consuming valuable top-surface area.
+
+Rev 1 will use the encoder/display interface instead.
 
 ## Provider-specific AI key
 Reason:

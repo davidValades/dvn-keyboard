@@ -30,7 +30,7 @@ A software developer who:
    It should feel premium without becoming excessively heavy, large or expensive.
 
 4. **Context-aware**
-   Physical modes and visual feedback should help the keyboard adapt to writing, coding, development tools, gaming and custom workflows.
+   Context modes and visual feedback should help the keyboard adapt to writing, coding, development tools, gaming and custom workflows.
 
 5. **Modular**
    Hardware modules should extend the keyboard without redesigning the core device.
@@ -47,7 +47,7 @@ A software developer who:
 ## Differentiating systems
 
 ### DVN Context System
-Physical operating modes:
+Operating contexts:
 - WRITE
 - CODE
 - DEV
@@ -55,7 +55,7 @@ Physical operating modes:
 - CUSTOM
 
 ### DVN Context Display
-A small integrated contextual display that can show the active mode, temporary encoder feedback, profile/status information and simple user-configurable visuals without replacing the physical mode selector.
+A small integrated contextual display that shows the active mode, temporary encoder feedback, profile/status information and simple user-configurable visuals. The display and the push rotary encoder form the primary on-device context-control interface.
 
 ### DVN Adaptive Legends
 Optical legends that reveal or emphasize alternate functions depending on the active context.

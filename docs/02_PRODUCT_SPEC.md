@@ -110,30 +110,29 @@ Gaming-oriented profile.
 ### CUSTOM
 Fully user-configurable through DVN Studio.
 
-## 10. Physical mode selector
-A physical context selector is required.
+## 10. Context control
+DVN-65 Rev 1 will not require a separate physical mode selector. Context selection and local device navigation will be integrated into the push rotary encoder and Context Display.
 
-Candidate mechanisms:
-- multi-position slider
-- rotary selector
-- mechanical switch
-- other tactile mechanism
+Required interaction capabilities:
+- rotate the encoder to navigate or adjust the currently selected function
+- press the encoder to select/confirm or enter the on-device interface
+- allow WRITE / CODE / DEV / GAME / CUSTOM to be selected through the on-device interface
+- show the active context clearly on the Context Display
+- allow additional device controls to be added without introducing dedicated physical controls for each function
 
-**Status:** TBD — Research Required
+Exact short-press / long-press behavior, menu depth and shortcuts remain subject to UI research and prototyping.
 
-The current mode should ideally be identifiable physically without depending only on software.
+## 11. Push rotary encoder
+A contextual push rotary encoder is planned as the primary local input for the Context Display.
 
-## 11. Encoder
-A contextual rotary encoder is planned.
-
-Possible behavior:
+Possible direct behavior outside the menu:
 - WRITE: scroll/media
 - CODE: editor zoom/tab navigation
 - DEV: errors/debug navigation
 - GAME: volume
 - CUSTOM: user-defined
 
-Encoder press may provide an additional action.
+Within the on-device interface, rotation should navigate or change values and encoder press should select/confirm. Candidate controls include context selection, volume, functional-lighting intensity, profiles and other future settings.
 
 ## 12. DVN Context Display
 A small integrated contextual display is planned for Rev 1, positioned near the encoder/control area.
@@ -144,7 +143,7 @@ Primary purposes:
 - show profile or device status
 - show simple user-configurable icons or a lightweight mascot/visual
 
-The display must complement, not replace, the physical mode selector. The active context should still be physically understandable without depending only on the display.
+The display is the primary visual indicator of the active context and works together with the push rotary encoder as the on-device control interface.
 
 Candidate technologies:
 - small monochrome OLED

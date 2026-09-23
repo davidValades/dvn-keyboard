@@ -33,7 +33,7 @@
 │ MCU              │  │ communication       │
 │ USB-C            │  │ power               │
 │ RGB/optics       │  │ hot attachment TBD  │
-│ encoder          │  └───────┬─────────────┘
+│ push encoder     │  └───────┬─────────────┘
 │ context display  │          │
 └───────┬──────────┘          ▼
         │                External modules
@@ -48,8 +48,7 @@ The main keyboard PCB is responsible for:
 - USB-C connection
 - hot-swap MX switches
 - RGB/optical illumination
-- physical mode selector
-- encoder
+- push rotary encoder
 - small Context Display or display connector/daughterboard interface
 - module interface
 - reset/boot/debug access
@@ -124,7 +123,7 @@ Conceptual commands:
 Protocol should eventually be versioned.
 
 ## 5. DVN Context System
-Physical operating states:
+Operating contexts:
 - WRITE
 - CODE
 - DEV
@@ -164,7 +163,7 @@ Primary responsibilities:
 - show profile or device status
 - optionally show a simple user-configurable icon or mascot
 
-The display does not replace the physical context selector.
+The display and push rotary encoder form the primary on-device context-control interface.
 
 Implementation is not yet selected. Research must compare:
 - monochrome OLED vs color IPS/TFT

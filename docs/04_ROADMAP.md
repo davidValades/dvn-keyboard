@@ -63,8 +63,18 @@ Investigate:
 - relegendable keycaps
 - ambient-light readability
 
-### 4. Mode selector
-Compare slider, rotary and other mechanisms.
+### 4. Context control / push rotary encoder
+Prototype the on-device control model using the Context Display and a push rotary encoder.
+
+Evaluate:
+- encoder detent feel and resolution
+- push force
+- rotate / press navigation
+- short-press vs long-press behavior
+- context selection speed
+- volume / lighting adjustment
+- accidental activation prevention
+- menu depth and discoverability
 
 ### 5. DVN Context Display
 Research the minimum integrated display suitable for Rev 1.
@@ -80,7 +90,7 @@ Compare:
 - UI constraints
 - cost
 
-The display must complement, not replace, the physical mode selector.
+The display must clearly communicate active context and provide immediate feedback for encoder navigation and adjustments.
 
 ### 6. CAD tooling
 Compare open-source-capable CAD workflows.
@@ -110,7 +120,7 @@ Build a small electronics prototype with:
 - encoder
 - small display candidate
 - USB
-- mode input
+- push rotary encoder
 
 Goal:
 prove core firmware behavior before designing the full keyboard PCB.
@@ -162,7 +172,7 @@ Design:
 - case
 - plate
 - mounting
-- mode selector integration
+- control-island integration
 - encoder integration
 - Context Display integration/window
 - module attachment geometry
@@ -212,7 +222,7 @@ Success criteria:
 - hot-swap MX 5-pin
 - USB-C
 - WRITE/CODE/DEV/GAME/CUSTOM
-- physical context selector
+- push rotary encoder context control
 - functional Adaptive Legends
 - Action Key
 - contextual encoder
