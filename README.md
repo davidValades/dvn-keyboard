@@ -1,5 +1,11 @@
 # DVN-65
 
+<p align="center">
+  <img src="assets/dvn-65-banner.webp" alt="DVN-65 conceptual design banner" width="100%">
+</p>
+
+<p align="center"><sub>Conceptual visualization — the physical design is still evolving.</sub></p>
+
 **DVN — Dynamic Visual Nexus**
 
 A portable, premium, modular mechanical keyboard platform designed around software development.
