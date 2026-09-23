@@ -1,7 +1,7 @@
 # DVN-65
 
 <p align="center">
-  <img src="Assets/images/dvn-65-banner.png" alt="DVN-65 conceptual design banner" width="100%">
+  <img src="assets/images/dvn-65-banner.png" alt="DVN-65 conceptual design banner" width="100%">
 </p>
 
 <p align="center"><sub>Conceptual visualization — the physical design is still evolving.</sub></p>
@@ -128,7 +128,7 @@ dvn-keyboard/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── Assets/
+├── assets/
 │   └── images/
 │       └── dvn-65-banner.png
 └── docs/
