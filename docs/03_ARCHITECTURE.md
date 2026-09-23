@@ -8,7 +8,7 @@
 ┌──────────────────────────────┐
 │          DVN Studio          │
 │      C# / .NET / Avalonia    │
-└──────────────┬──────────────┘
+└──────────────┬───────────────┘
                │
         USB configuration
         protocol / HID
@@ -21,22 +21,22 @@
 │ keymap                       │
 │ module manager               │
 │ optical state                │
+│ display state                │
 │ persistent configuration     │
 └───────┬─────────────┬────────┘
         │             │
         │             │
-┌───────▼──────┐  ┌───▼────────────────┐
-│ Core PCB     │  │ DVN Module Interface│
-│              │  │                     │
-│ matrix       │  │ discovery           │
-│ MCU          │  │ communication       │
-│ USB-C        │  │ power               │
-│ RGB          │  │ hot attachment TBD  │
-│ encoder      │  └───────┬─────────────┘
-└───────┬──────┘          │
-        │                 ▼
-        │            External modules
-        │
+┌───────▼──────────┐  ┌───▼────────────────┐
+│ Core PCB         │  │ DVN Module Interface│
+│                  │  │                     │
+│ matrix           │  │ discovery           │
+│ MCU              │  │ communication       │
+│ USB-C            │  │ power               │
+│ RGB/optics       │  │ hot attachment TBD  │
+│ encoder          │  └───────┬─────────────┘
+│ context display  │          │
+└───────┬──────────┘          ▼
+        │                External modules
         ▼
 DVN Adaptive Legends
 ```
@@ -50,6 +50,7 @@ The main keyboard PCB is responsible for:
 - RGB/optical illumination
 - physical mode selector
 - encoder
+- small Context Display or display connector/daughterboard interface
 - module interface
 - reset/boot/debug access
 - persistent configuration support
@@ -72,6 +73,7 @@ DVN-specific firmware should provide:
 - Context System
 - module discovery/configuration
 - Adaptive Legends control
+- Context Display state/rendering and encoder feedback
 - DVN configuration protocol
 - profile persistence
 - Action Key behavior
@@ -88,6 +90,7 @@ Responsibilities:
 - create macros
 - configure modules
 - configure encoder
+- configure Context Display behavior and simple user visuals
 - configure Action Key
 - control functional lighting
 - import/export profiles
@@ -112,6 +115,7 @@ Conceptual commands:
 - SET_MODE
 - SET_RGB
 - SET_ENCODER
+- SET_DISPLAY_CONFIG
 - GET_MODULES
 - SET_MODULE_CONFIG
 - SAVE_PROFILE
@@ -132,6 +136,7 @@ Changing context may modify:
 - optical legends
 - functional lighting
 - encoder behavior
+- Context Display content/feedback
 - module behavior
 - Action Key behavior
 
@@ -150,7 +155,32 @@ Initial research direction:
 
 Must be validated experimentally before full keyboard integration.
 
-## 7. DVN Module Interface
+## 7. DVN Context Display
+Small integrated visual feedback subsystem located near the encoder/control area.
+
+Primary responsibilities:
+- show the active context
+- provide temporary encoder/action feedback
+- show profile or device status
+- optionally show a simple user-configurable icon or mascot
+
+The display does not replace the physical context selector.
+
+Implementation is not yet selected. Research must compare:
+- monochrome OLED vs color IPS/TFT
+- I²C vs SPI
+- size and resolution
+- framebuffer/RAM/flash impact
+- refresh requirements
+- power consumption
+- QMK integration
+- direct main-PCB integration vs daughterboard
+- mechanical window/protection
+- unit cost
+
+The display should remain useful without resident software after configuration has been stored on-device.
+
+## 8. DVN Module Interface
 Conceptual side-module architecture.
 
 Mechanical direction:
@@ -167,7 +197,7 @@ The interface should eventually support:
 - firmware/protocol version
 - configuration
 
-## 8. Data persistence
+## 9. Data persistence
 Required behavior:
 1. Configure device in DVN Studio.
 2. Save configuration to keyboard.
@@ -177,7 +207,7 @@ Required behavior:
 
 Exact storage mechanism depends on MCU/platform selection.
 
-## 9. Architecture principles
+## 10. Architecture principles
 - clear boundaries between hardware, firmware and software
 - version interfaces rather than tightly coupling components
 - prototype risky subsystems independently

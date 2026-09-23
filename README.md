@@ -10,7 +10,7 @@
 
 A portable, premium, modular mechanical keyboard platform designed around software development.
 
-> **Project status:** Phase 0 — Foundation. DVN-65 is an early engineering project; several core subsystems are still being researched and validated.
+> **Project status:** Phase 1 — Research. The project foundation is established; current work is focused on validating geometry, developer ergonomics, Adaptive Legends, controls, the contextual display and tooling before committing to PCB or mechanical architecture.
 
 ## What is DVN-65?
 
@@ -36,6 +36,7 @@ The project is also a hands-on engineering learning platform spanning electronic
 | System | Purpose | Status |
 | --- | --- | --- |
 | **DVN Context System** | Physical WRITE, CODE, DEV, GAME, and CUSTOM operating contexts | Direction defined |
+| **DVN Context Display** | Small integrated display for mode, encoder feedback, profile/status and simple user-configurable visuals | Direction defined; implementation research |
 | **DVN Adaptive Legends** | Optical legends that reveal or emphasize alternate functions by context | Experimental |
 | **DVN Developer Layout** | Data-driven symbol and navigation layout based on real source code | Research |
 | **DVN Module Interface** | Open side-module architecture for additional controls and capabilities | Conceptual |
@@ -55,13 +56,14 @@ The current product direction includes:
 - persistent on-device configuration
 - a physical context selector
 - a contextual rotary encoder
+- a small integrated **DVN Context Display** near the encoder for mode/status/feedback and simple custom visuals
 - functional rather than gaming-oriented lighting
 - side modules using magnets, alignment features, and pogo pins as the current mechanical direction
 - **DVN Studio** built with C#/.NET/Avalonia
 - Windows-first software support while avoiding unnecessary barriers to macOS/Linux
 - target final unit cost of **≤ €200**, with a soft maximum of **€250**
 
-Several details — including final geometry, MCU, matrix architecture, module bus, optical implementation, materials, and final open-hardware license — intentionally remain unresolved until research or prototypes justify a decision.
+Several details — including final geometry, MCU, matrix architecture, module bus, Adaptive Legends optical implementation, Context Display technology/interface, materials, and final open-hardware license — intentionally remain unresolved until research or prototypes justify a decision.
 
 ## High-level architecture
 
@@ -83,6 +85,7 @@ MCU                  communication
 USB-C                power
 lighting             modules
 encoder
+context display
         |
         v
 DVN Adaptive Legends
@@ -90,17 +93,18 @@ DVN Adaptive Legends
 
 ## Project status and roadmap
 
-The project is currently in **Phase 0 — Foundation**.
+**Phase 0 — Foundation is complete.** The documentation, source-of-truth hierarchy, repository structure, decision tracking, engineering log and research backlog are established.
 
-The immediate objective is to establish stable product documentation and a clear research plan before committing to PCB or mechanical architecture.
+The project is now in **Phase 1 — Research**. The immediate objective is to replace assumptions with evidence before committing to PCB or mechanical architecture.
 
-The next phase focuses on:
+Current research focuses on:
 
 1. keyboard geometry and ergonomics
 2. Developer Layout analysis using real source-code datasets
 3. Adaptive Legends optical research
 4. physical context-selector mechanisms
-5. CAD tooling
+5. DVN Context Display implementation constraints
+6. CAD tooling
 
 See [the roadmap](docs/04_ROADMAP.md) and [research backlog](docs/07_RESEARCH_BACKLOG.md) for the current plan.
 

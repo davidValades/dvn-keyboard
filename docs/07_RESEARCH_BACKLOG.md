@@ -77,7 +77,38 @@ Evaluate:
 - electrical complexity
 - CAD integration
 
-## 5. CAD tool
+## 5. DVN Context Display
+The display itself is part of the Rev 1 direction; implementation is not decided.
+
+Compare:
+- monochrome OLED
+- color IPS/TFT
+- other compact display technologies if justified
+- I²C
+- SPI
+- main-PCB integration
+- daughterboard integration
+
+Determine:
+- minimum useful physical size
+- resolution and viewing-angle requirements
+- RAM/framebuffer requirements
+- flash requirements for fonts/icons/simple mascots
+- GPIO/interface requirements
+- refresh-rate needs
+- power consumption
+- QMK compatibility and rendering strategy
+- encoder-feedback behavior
+- mode/status UI behavior
+- user-configurable asset limits
+- mechanical window/protection
+- assembly complexity
+- unit-cost impact
+
+Constraint:
+the display must complement, not replace, the physical context selector.
+
+## 6. CAD tool
 Compare open-source-friendly tools for:
 - parametric modeling
 - assemblies
@@ -97,7 +128,7 @@ Candidate tools:
 
 # MEDIUM PRIORITY
 
-## 6. MCU selection
+## 7. MCU selection
 Do not choose until requirements are estimated.
 
 Compare:
@@ -106,7 +137,9 @@ Compare:
 - RAM
 - flash
 - persistent storage options
+- display/framebuffer requirements
 - QMK support
+- display-library/support implications
 - availability
 - package/solderability
 - price
@@ -115,15 +148,18 @@ Compare:
 
 RP2040 is a candidate, not a decision.
 
-## 7. Key matrix
+## 8. Key matrix and I/O budget
 Determine:
 - likely key count
 - rows/columns
 - GPIO requirements
 - diode orientation
-- module/mode/encoder I/O impact
+- module I/O impact
+- mode-selector I/O impact
+- encoder I/O impact
+- Context Display interface impact
 
-## 8. DVN Module Bus
+## 9. DVN Module Bus
 Compare:
 - I²C
 - UART
@@ -139,7 +175,7 @@ Requirements:
 - future extensibility
 - low cost
 
-## 9. Module hot-plug safety
+## 10. Module hot-plug safety
 Research:
 - power sequencing
 - ESD
@@ -148,19 +184,20 @@ Research:
 - firmware detection
 - pogo-pin insertion behavior
 
-## 10. DVN Studio protocol
+## 11. DVN Studio protocol
 Research:
 - QMK Raw HID
 - HID reports
 - versioning
 - configuration serialization
 - backward compatibility
+- Context Display configuration and simple asset transfer if required
 
 ---
 
 # LATER
 
-## 11. Mechanical mounting system
+## 12. Mechanical mounting system
 Compare:
 - gasket
 - top mount
@@ -170,7 +207,7 @@ Compare:
 
 Do not prioritize until geometry is more stable.
 
-## 12. Plate materials
+## 13. Plate materials
 Compare:
 - FR4
 - aluminium
@@ -179,7 +216,7 @@ Compare:
 - steel
 - others
 
-## 13. Case material
+## 14. Case material
 Balance:
 - premium feel
 - weight
@@ -188,18 +225,18 @@ Balance:
 - acoustic behavior
 - transportability
 
-## 14. Stabilizers
+## 15. Stabilizers
 Evaluate after layout and PCB geometry stabilize.
 
-## 15. Switch selection
+## 16. Switch selection
 Final switch is not required to design the platform.
 
 Target office-appropriate acoustics.
 
-## 16. Carry case
+## 17. Carry case
 Design only after external dimensions and module strategy stabilize.
 
-## 17. Commercialization
+## 18. Commercialization
 Later research:
 - group buy
 - crowdfunding
@@ -210,7 +247,7 @@ Later research:
 - warranty
 - production BOM
 
-## 18. Open-hardware licensing
+## 19. Open-hardware licensing
 Review:
 - CERN-OHL-W-2.0
 - alternatives

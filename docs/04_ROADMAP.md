@@ -1,14 +1,16 @@
 # DVN Roadmap
 
 ## Current phase
-**Phase 0 — Foundation**
+**Phase 1 — Research**
 
 ## Current objective
-Establish stable product documentation and prepare the research plan before committing to PCB or mechanical architecture.
+Validate the highest-impact product assumptions with evidence before committing to PCB or mechanical architecture. Geometry and ergonomics are the first research track.
 
 ---
 
 ## Phase 0 — Foundation
+**Status:** COMPLETE — 2026-09-23
+
 ### Goals
 - project instructions
 - project source files
@@ -21,6 +23,8 @@ Establish stable product documentation and prepare the research plan before comm
 
 ### Exit criteria
 The project has a clear source of truth and unresolved questions are explicitly identified.
+
+**Exit result:** Met. Core documentation, repository structure, source-of-truth rules, decision tracking, engineering log and research backlog are established.
 
 ---
 
@@ -62,7 +66,23 @@ Investigate:
 ### 4. Mode selector
 Compare slider, rotary and other mechanisms.
 
-### 5. CAD tooling
+### 5. DVN Context Display
+Research the minimum integrated display suitable for Rev 1.
+
+Compare:
+- monochrome OLED
+- color IPS/TFT
+- I²C vs SPI
+- main-PCB vs daughterboard integration
+- memory / flash / GPIO requirements
+- power
+- mechanical integration
+- UI constraints
+- cost
+
+The display must complement, not replace, the physical mode selector.
+
+### 6. CAD tooling
 Compare open-source-capable CAD workflows.
 
 ---
@@ -88,6 +108,7 @@ Build a small electronics prototype with:
 - diodes
 - RGB/optical LED
 - encoder
+- small display candidate
 - USB
 - mode input
 
@@ -143,6 +164,7 @@ Design:
 - mounting
 - mode selector integration
 - encoder integration
+- Context Display integration/window
 - module attachment geometry
 
 Use affordable external prototype manufacturing.
@@ -170,6 +192,7 @@ Combine:
 - mechanical enclosure
 - Developer Layout
 - Context System
+- Context Display
 - Adaptive Legends
 - module interface
 - firmware
@@ -193,6 +216,7 @@ Success criteria:
 - functional Adaptive Legends
 - Action Key
 - contextual encoder
+- small contextual display for mode/status/encoder feedback
 - persistent configuration
 - DVN Studio
 - at least one functional module

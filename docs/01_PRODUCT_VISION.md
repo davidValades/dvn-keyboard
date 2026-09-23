@@ -54,6 +54,9 @@ Physical operating modes:
 - GAME
 - CUSTOM
 
+### DVN Context Display
+A small integrated contextual display that can show the active mode, temporary encoder feedback, profile/status information and simple user-configurable visuals without replacing the physical mode selector.
+
 ### DVN Adaptive Legends
 Optical legends that reveal or emphasize alternate functions depending on the active context.
 
@@ -90,6 +93,7 @@ It should demonstrate:
 - persistent configuration
 - programming-oriented modes
 - Adaptive Legends
+- small contextual display
 - modular expansion
 - DVN Studio
 - documented and reproducible engineering work

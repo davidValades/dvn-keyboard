@@ -69,6 +69,13 @@ Primarily functional, not gaming-oriented.
 ## Action Key
 Provider-independent and user configurable.
 
+## DVN Context Display
+Rev 1 should include a small integrated contextual display near the encoder/control area.
+
+Its minimum role is to show active context and temporary encoder/status feedback. It may also show profile information and simple user-configurable icons or a lightweight mascot.
+
+The display complements the physical context selector and does not replace it.
+
 ## Firmware direction
 QMK as base, with DVN-specific extensions.
 
@@ -149,6 +156,19 @@ Rows/columns and scanning details.
 ## Functional lighting colors
 Must account for optical filtering requirements.
 
+## DVN Context Display implementation
+Research required for:
+- monochrome OLED vs color IPS/TFT
+- physical size and resolution
+- I²C vs SPI
+- framebuffer/RAM/flash requirements
+- power consumption
+- QMK/firmware rendering approach
+- main-PCB vs daughterboard implementation
+- mechanical window/protection
+- user-configurable asset limits
+- unit-cost impact
+
 ## Module communication bus
 Candidates may include I²C, UART, USB or another protocol.
 
@@ -205,7 +225,7 @@ Possible later areas:
 - additional modules
 - numpad module
 - navigation module
-- display module
+- larger/secondary display module
 - trackball/touchpad module
 - carry case
 - small-batch production

@@ -25,7 +25,7 @@ Stable product vision:
 Current product requirements. This is the main source of truth for **what DVN must do**.
 
 ### `03_ARCHITECTURE.md`
-High-level system architecture: hardware, firmware, DVN Studio, modules, protocol and optical system.
+High-level system architecture: hardware, firmware, DVN Studio, Context Display, modules, protocol and optical system.
 
 ### `04_ROADMAP.md`
 Current phase, milestones, dependencies and next steps.
@@ -47,6 +47,7 @@ Create only when enough information exists:
 - `ELECTRONICS.md`
 - `DVN_PROTOCOL.md`
 - `DVN_STUDIO.md`
+- `CONTEXT_DISPLAY.md`
 - `MANUFACTURING.md`
 - `BOM.md`
 - `adr/`

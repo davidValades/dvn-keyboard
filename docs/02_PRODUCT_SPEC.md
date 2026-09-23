@@ -135,7 +135,41 @@ Possible behavior:
 
 Encoder press may provide an additional action.
 
-## 12. DVN Action Key
+## 12. DVN Context Display
+A small integrated contextual display is planned for Rev 1, positioned near the encoder/control area.
+
+Primary purposes:
+- show the active context: WRITE / CODE / DEV / GAME / CUSTOM
+- show temporary encoder function or feedback
+- show profile or device status
+- show simple user-configurable icons or a lightweight mascot/visual
+
+The display must complement, not replace, the physical mode selector. The active context should still be physically understandable without depending only on the display.
+
+Candidate technologies:
+- small monochrome OLED
+- small color IPS/TFT
+- other compact display technologies if justified
+
+Candidate interfaces:
+- I²C
+- SPI
+
+Constraints:
+- low physical footprint
+- low power consumption
+- limited MCU/RAM/flash impact
+- reasonable cost
+- readable viewing angle
+- mechanically protectable
+- no resident PC software required during normal use
+
+The display may be implemented directly on the main PCB or through a small daughterboard if that reduces prototype or revision risk.
+
+**Presence in Rev 1:** DECIDED  
+**Technology / size / interface / UI implementation:** TBD — Research Required
+
+## 13. DVN Action Key
 A configurable physical key independent of any specific provider.
 
 May trigger:
@@ -150,7 +184,7 @@ May trigger:
 
 Its function may vary by mode.
 
-## 13. Adaptive Legends
+## 14. Adaptive Legends
 A core experimental feature.
 
 Goal: alternate functions should become visibly apparent through controlled illumination and optical filtering.
@@ -165,7 +199,7 @@ Technology is not finalized.
 
 **Status:** EXPERIMENTAL
 
-## 14. Lighting
+## 15. Lighting
 RGB/lighting should be primarily functional.
 
 Possible semantic uses:
@@ -178,7 +212,7 @@ Possible semantic uses:
 
 Exact colors remain TBD because optical filtering requirements may constrain them.
 
-## 15. Modular system
+## 16. Modular system
 The keyboard should support side modules.
 
 Preferred conceptual direction:
@@ -189,14 +223,14 @@ Preferred conceptual direction:
 
 The interface should eventually be documented as an open standard.
 
-## 16. First module
+## 17. First module
 Initial module target:
 - 3–6 macro keys
 - rotary encoder
 
 Purpose: validate mechanical attachment, electrical connection, protocol, firmware and DVN Studio integration.
 
-## 17. Firmware
+## 18. Firmware
 Preferred base: **QMK**
 
 DVN-specific firmware should implement:
@@ -204,9 +238,10 @@ DVN-specific firmware should implement:
 - module support
 - configuration protocol
 - Adaptive Legends behavior
+- Context Display state/feedback
 - persistent profiles/settings
 
-## 18. Software
+## 19. Software
 Preferred stack:
 - C#
 - .NET
@@ -229,6 +264,7 @@ Target features:
 - profiles
 - module configuration
 - encoder configuration
+- Context Display behavior and simple user visuals
 - lighting
 - Action Key
 - import/export
@@ -236,7 +272,7 @@ Target features:
 - firmware/device information
 - update support when appropriate
 
-## 19. Mechanical goals
+## 20. Mechanical goals
 - premium feel
 - portable
 - office-appropriate
@@ -246,7 +282,7 @@ Target features:
 
 Final materials are TBD.
 
-## 20. Acoustic goal
+## 21. Acoustic goal
 Premium, controlled and deep, but appropriate for office use.
 
 Avoid:
@@ -254,7 +290,7 @@ Avoid:
 - metallic resonance
 - gaming-oriented sound gimmicks
 
-## 21. CAD
+## 22. CAD
 Prefer open-source tools when viable.
 
 Candidates to research:
@@ -265,7 +301,7 @@ Candidates to research:
 
 **Status:** TBD — Research Required
 
-## 22. Manufacturing
+## 23. Manufacturing
 David does not own a 3D printer.
 
 Design prototypes around affordable external services:
@@ -277,7 +313,7 @@ Design prototypes around affordable external services:
 - PET printing
 - graphic/optical fabrication
 
-## 23. Open hardware
+## 24. Open hardware
 Desired philosophy:
 - public
 - understandable
