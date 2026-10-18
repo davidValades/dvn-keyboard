@@ -31,11 +31,18 @@ The project has a clear source of truth and unresolved questions are explicitly 
 ## Phase 1 — Research
 
 ### 1. Ergonomics and geometry
-Compare:
-- conventional 65%
-- unibody semi-split
-- moderate column stagger
-- thumb cluster options
+**Current Phase 1 progress (2026-10-18):**
+- Historical semi-split/G1R+ and 65% experiments retained; **B3 expanded-navigation rectangular ISO-ES** selected as working key-layout baseline.
+- Nominal width **17u** at **19.05 mm** pitch; Backspace **2u**; Space **5.75u**; inverted-T physical arrows; expanded right navigation; `º/ª` moved to provisional Fn combinations.
+- Selection was made from visual comparisons; it is **not a physically validated manufacturing layout**.
+
+**Next validation gate before PCB/plate:**
+1. update FreeCAD master from former 15.75u reference to approved 17u B3
+2. generate the complete switch-center geometry and independently check for overlapping key/switch footprints and impossible cutouts
+3. verify ISO Enter switch position, stab supports, 5.75u spacebar keycap and suitable stabilizer compatibility
+4. test 1:1 physical mockup for reach, key-spacing and actual typing posture
+5. define right-side display/encoder clearance inside one clean external rectangle; keep these controls mechanically separate from any suspended plate as needed
+6. document final accepted key count and key-to-electrical-matrix mapping
 
 ### 2. Developer Layout
 Analyze real code from:
@@ -93,7 +100,13 @@ Compare:
 The display must clearly communicate active context and provide immediate feedback for encoder navigation and adjustments.
 
 ### 6. CAD tooling
-Compare open-source-capable CAD workflows.
+**FreeCAD 1.1.4 selected** as mechanical CAD master; **KiCad selected** for custom PCB. Local working file `hardware/mechanical/freecad/DVN65_MasterLayout.FCStd` uses a Spreadsheet, fully constrained reference sketch and a hidden test row of 15 switch centers. It has not yet been added to GitHub.
+
+Remaining: reproducible FreeCAD generator/macro, source CAD committed to repository, stabilizer and hot-swap footprint alignment, manufacturing exports, FreeCAD ↔ KiCad coordinate conventions.
+
+### 7. Premium mechanical/acoustic proof direction
+Chosen user target: **Premium equilibrado**, firm but comfortable, controlled deep and defined sound. Trial hypothesis: gasket mounting, 1.5 mm FR4 plate, aluminium alternative and modular removable PORON/EVA damping. Confirm by prototyping before finalizing mounting, material or case.
+
 
 ---
 
