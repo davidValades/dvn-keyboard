@@ -54,8 +54,8 @@ The current product direction includes:
 - **USB-C wired** connectivity for Rev 1
 - **QMK** as the firmware foundation, with DVN-specific extensions
 - persistent on-device configuration
-- a physical context selector
-- a contextual rotary encoder
+- Context Display + push rotary encoder for mode selection (no separate physical selector)
+- a contextual push rotary encoder
 - a small integrated **DVN Context Display** near the encoder for mode/status/feedback and simple custom visuals
 - functional rather than gaming-oriented lighting
 - side modules using magnets, alignment features, and pogo pins as the current mechanical direction
@@ -64,6 +64,20 @@ The current product direction includes:
 - target final unit cost of **≤ €200**, with a soft maximum of **€250**
 
 Several details — including final geometry, MCU, matrix architecture, module bus, Adaptive Legends optical implementation, Context Display technology/interface, materials, and final open-hardware license — intentionally remain unresolved until research or prototypes justify a decision.
+
+## Selected Phase 1 working key layout (2026-10-18)
+
+- **B3 expanded-navigation**, traditional rectangular ISO-ES layout; physical inverted-T arrows retained.
+- Nominal keyfield **17u × 5 rows = 323.85 × 95.25 mm** at **19.05 mm pitch**, **excluding** case and the later right-hand screen/encoder zone.
+- **Backspace 2u** and **Space 5.75u**. The latter is not standard across general-purpose keycap sets: keycap and stabilizer sourcing remains to be demonstrated.
+- No dedicated `º/ª` key: provisional keymap uses `Fn + Esc` → `º` and `Fn + Shift + Esc` → `ª` (firmware/host-layout testing pending).
+- **FreeCAD 1.1.4** selected for mechanical CAD, **KiCad** for custom hot-swap PCB design.
+- Target feel/sound: **Premium equilibrado** — firm yet comfortable typing, controlled deep and defined acoustics.
+- Proposed, not yet confirmed: gasket mount, approximately 1.5 mm FR4 plate, alternative aluminium plate, removable PORON/EVA dampening and possible CNC aluminium housing.
+
+The B3 choice fixes the **current key-allocation/layout direction**, not manufacturing dimensions or final keycap/stabilizer compatibility. Local FreeCAD work exists at `hardware/mechanical/freecad/DVN65_MasterLayout.FCStd`, but the current local CAD file and macros have **not yet been committed** to GitHub. The local master sketch still reflects an earlier 15.75u comparison and must be updated to B3.
+
+See [product specification](docs/02_PRODUCT_SPEC.md), [decisions](docs/05_DESIGN_DECISIONS.md) and [engineering log](docs/06_ENGINEERING_LOG.md).
 
 ## High-level architecture
 
@@ -95,16 +109,16 @@ DVN Adaptive Legends
 
 **Phase 0 — Foundation is complete.** The documentation, source-of-truth hierarchy, repository structure, decision tracking, engineering log and research backlog are established.
 
-The project is now in **Phase 1 — Research**. The immediate objective is to replace assumptions with evidence before committing to PCB or mechanical architecture.
+The project is now in **Phase 1 — Research**. A straight rectangular **B3 expanded-navigation ISO-ES** key-layout baseline has been selected for mechanical CAD. Switch-center geometry, stabilizers, plate/PCB fit, the display/encoder reservation and acoustics remain subject to prototype validation.
 
 Current research focuses on:
 
-1. keyboard geometry and ergonomics
-2. Developer Layout analysis using real source-code datasets
-3. Adaptive Legends optical research
-4. physical context-selector mechanisms
-5. DVN Context Display implementation constraints
-6. CAD tooling
+1. B3 key-layout geometry, actual switch centers, ISO Enter/stabilizers and availability of a 5.75u spacebar
+2. premium balanced acoustic/mechanical prototyping (gasket/plate/removable foam)
+3. Developer Layout analysis using real source-code datasets
+4. Adaptive Legends optical research
+5. push-encoder/context-display user interface and implementation constraints
+6. parametric FreeCAD → KiCad CAD/PCB workflow
 
 See [the roadmap](docs/04_ROADMAP.md) and [research backlog](docs/07_RESEARCH_BACKLOG.md) for the current plan.
 
