@@ -16,33 +16,28 @@ Portable premium modular mechanical keyboard optimized for software development.
 Prefer inexpensive validation experiments before expensive fabrication.
 
 ## 3. Form factor
-Initial direction: approximately **65%**.
+**Selected Phase 1 key-layout baseline:** B3 with expanded navigation, a straight rectangular keyfield and integrated physical inverted-T arrow keys. Its nominal keyfield width is **17u = 323.85 mm** at a 19.05 mm pitch, and five rows give a nominal depth of **95.25 mm** before casing and controls. These dimensions describe the comparison layout, not an approved manufacturing envelope.
 
-Final geometry is not decided.
+Earlier unibody semi-split / G1R+ concepts are retained as research history but are **not** the current layout baseline. The actual external case rectangle, overall dimensions including display/encoder, tilt and ergonomic performance are not yet validated.
 
-Must research:
-- conventional 65%
-- unibody semi-split
-- moderate column stagger
-- subtle ergonomic angle
-
-Constraint: retain a familiar typing experience.
+Constraint: retain a familiar ISO-ES typing experience; do not claim measurable ergonomic benefit without testing.
 
 ## 4. Layout
-Preferred primary layout: **ISO-ES**
+Primary layout: **ISO-ES**, using the **B3 expanded-navigation** comparison variant as the approved working base for mechanical CAD.
 
-Must preserve:
-- Ñ
-- ISO Enter
-- conventional letter positions
-- familiar general typing behavior
+Keep:
+- Ñ, ISO Enter and conventional letter positions
+- physical inverted-T arrows, integrated without an offset island
+- expanded dedicated navigation keys on the right side
+- **Backspace 2u**
+- **Space 5.75u** (non-standard: availability and compatible stabilizer required)
+- no separate physical `º/ª` key in the number row, to gain usable space
+- intended `Fn + Esc` → `º` and `Fn + Shift + Esc` → `ª`; final implementation depends on QMK keymap and OS layout and **must be tested**, not considered implemented
+- a clean rectangular arrangement without ornamental side bulges or unintentional gaps
 
-Moderate changes may be explored for:
-- thumb cluster
-- auxiliary keys
-- mode controls
-- symbol access
-- modules
+Reference keyfield pitch: **19.05 mm**, 17u width × 5 rows. Layout approval applies to **concept geometry and key allocation**, not yet PCB/plate cutouts, switch/stabilizer offsets or keycap purchasing. Final switch count, special-key lengths and ISO Enter center must be cross-checked against the FreeCAD generator and physical parts.
+
+Moderate changes may still be explored for symbol access, layers and modules; the chosen B3 layout must not be silently replaced by older geometric concepts.
 
 ## 5. Switch compatibility
 Required:
@@ -272,33 +267,38 @@ Target features:
 - update support when appropriate
 
 ## 20. Mechanical goals
-- premium feel
-- portable
-- office-appropriate
-- minimal/professional aesthetic
-- durable
-- repairable
+- premium but comfortable, firm and controlled key feel
+- portable, office-appropriate, minimal rectangular appearance
+- durable, repairable, accessible fasteners and interchangeable components
+- isolate vibration without over-compressing the switch/plate/PCB assembly
 
-Final materials are TBD.
+**Current prototyping hypothesis, not a final bill of materials:** gasket mount with controlled compression; FR4 plate approximately 1.5 mm (aluminium plate as alternate); PCB approximately 1.6 mm with MX-compatible 5-pin footprints and hot-swap sockets; PCB-mounted screw-in stabilizers where supported; removable PORON-type gasket and optional plate/PCB foam with selective lower-case PORON/EVA; CNC anodized aluminium as a possible final housing subject to weight and cost tests.
+
+The push encoder and contextual display should have mechanically stable mounting independent of the suspended switch plate if this proves necessary. Exact support points, clearances, tolerances, materials and vendor-compatible parts remain TBD.
 
 ## 21. Acoustic goal
-Premium, controlled and deep, but appropriate for office use.
+**Selected user preference:** *Premium equilibrado* — a firm but comfortable keystroke and a deep, defined, controlled sound suitable for long software-development sessions.
 
 Avoid:
 - excessive loudness
 - metallic resonance
 - gaming-oriented sound gimmicks
+- indiscriminate foam filling that makes the sound overly muted or restricts expected plate movement
+
+Acoustic result is to be evaluated with actual switches, keycaps, gaskets, plate and optional removable foam; this target is not yet experimentally achieved.
 
 ## 22. CAD
-Prefer open-source tools when viable.
+**DECIDED:** FreeCAD **1.1.4** as the primary mechanical CAD environment, with parametric Sketcher/Spreadsheet and Python generation; **KiCad** for the PCB. Other CAD tools may be evaluated for specific exports or manufacturing needs.
 
-Candidates to research:
-- FreeCAD
-- SolveSpace
-- OpenSCAD
-- others
+Local working CAD path:
+`hardware/mechanical/freecad/DVN65_MasterLayout.FCStd`
 
-**Status:** TBD — Research Required
+Current locally verified progress (not yet committed to this repository):
+- Spreadsheet `Parameters`: `KeyPitch = 19.05 mm`, `KeycapSize = 18 mm` (visual envelope), `SwitchCutout = 14 mm` (nominal placeholder), `PlateThickness = 1.5 mm`
+- `Keyfield_B_Reference` sketch constrained at **15.75u × 5u** — an **earlier comparison size**, **not yet updated to approved B3 17u**
+- `KeyCenters_Test_Row0`: 15 experimental reference points, hidden after validation
+
+**Next:** synchronize the local CAD parameters with B3 (17u), generate and validate the full switch-center dataset, verify true ISO Enter and stabilizer geometry, and only then derive plate and PCB. A working rectangular sketch is not a completed manufacturing model.
 
 ## 23. Manufacturing
 David does not own a 3D printer.
