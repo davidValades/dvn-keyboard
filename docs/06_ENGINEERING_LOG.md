@@ -213,3 +213,52 @@ Validate the 1:1 template physically, then refine the outer case contour, displa
 - `assets/geometry/phase1/DVN65_G1Rplus_v5_A3_1to1.pdf`
 - `assets/geometry/phase1/DVN65_G1Rplus_v5_A4_Tiled_1to1.pdf`
 
+
+---
+
+## 2026-10-18 — B3 expanded-navigation layout selected; FreeCAD mechanical baseline started
+
+**Area:** Mechanical / layout / CAD / acoustics / firmware mapping
+
+**Objective:**  
+Converge on a compact, visually rectangular, ISO-ES keyboard with usable physical arrows, standard-size Backspace and an eventual integrated Context Display + push encoder; establish a reproducible mechanical CAD starting point.
+
+**Design history / alternatives considered:**  
+Several older semi-split and right-side island concepts (including G1R+) were rejected as current directions after repeated visual issues: unnecessary contours, excessive unused area, irregular edges and control-to-key intersections. B1 (compact) and B3 (expanded navigation) were compared in FreeCAD/visual layout drawings. An earlier apparent hole next to Enter was traced to incomplete ISO Enter representation and navigation geometry; a shorter Space alone does **not** close a gap on another row. Keep that observation for future geometry validation.
+
+**Approved current working layout:**  
+- **B3 expanded navigation** on a straight rectangular ISO-ES keyfield
+- physical inverted-T arrows integrated into the switch field and dedicated navigation keys
+- **Backspace 2u** and **Space 5.75u**
+- physical `º/ª` omitted; intended `Fn + Esc` → `º`, `Fn + Shift + Esc` → `ª` (firmware/host-language behavior **not tested**)
+- comparison footprint: nominal **17u × 5 rows**, **323.85 × 95.25 mm** at **19.05 mm pitch**; excludes casing and the later right-side control area
+- no dedicated context-mode selector: push encoder + Context Display remain the interaction direction
+
+**Mechanical / acoustic goal:**  
+User selected **Premium equilibrado**: firm but comfortable typing, deep defined controlled sound. Trial stack: gasket-mount, approx. **1.5 mm FR4 plate** (aluminium alternative), MX 5-pin hot-swap PCB (initial approx. 1.6 mm), PCB screw-in stabilizers where compatible, removable PORON-type gaskets and optional plate/PCB and case damping. Aluminium CNC is a candidate case finish, **not** a fixed fabrication plan. Real feel and sound remain untested.
+
+**Local FreeCAD progress (not yet committed):**  
+- FreeCAD **1.1.4** chosen for mechanical source CAD, KiCad for PCB
+- Windows repository clone: `C:\repos\personales\dvn-keyboard`
+- local model: `hardware/mechanical/freecad/DVN65_MasterLayout.FCStd`
+- `Parameters` spreadsheet includes `KeyPitch = 19.05 mm`, `KeycapSize = 18 mm` (visual), `SwitchCutout = 14 mm` (plate nominal), `PlateThickness = 1.5 mm`
+- `Keyfield_B_Reference` is a fully constrained construction sketch measuring **300.0375 × 95.25 mm** (earlier **15.75u** test geometry)
+- 15-point first-row switch-center test created and subsequently hidden as `KeyCenters_Test_Row0`
+- B1/B3 visual comparison macros used to select layout; these are **concept-level layouts**, not manufacturing-validated plate/PCB files
+
+**Important conflict / corrective action:**  
+The local spreadsheet/reference sketch **still uses 15.75u**, while the newly approved B3 baseline is **17u**. Do **not** treat the existing FCStd as the final B3 plate. First update width to 17u and confirm the full key allocation and switch/stabilizer positions, then regenerate and check geometry. Reconcile the version of the comparison macro with the selected key allocation before exporting for fabrication.
+
+**Validation pending:**  
+- all centers, cutout-to-cutout clearances and ISO Enter actual switch location
+- custom **5.75u** Space keycap availability and compatible stabilizer scheme
+- actual Backspace/Shift/ISO Enter stabilizers and PCB screw-in clearance
+- physical 1:1 testing, ergonomic comfort, gasket compression and acoustic behavior
+- total switch count and PCB matrix, final case width and right-side screen/encoder packaging
+- upload FreeCAD model and generator to GitHub; do not assume local files are already tracked
+
+**Decision impact:**  
+B3 key layout, 2u Backspace, 5.75u Space and profile B acoustic target are documented as the current approved working direction. Mechanical manufacturing geometry, part sourcing and acoustic implementation remain experimental/TBD. Historical G1R+ design remains in the log but is superseded as the current geometry candidate.
+
+**Next step:**  
+Synchronize the local FreeCAD master to 17u, generate all switch positions with collision checks, verify ISO Enter and stabilizers, and compare against a physical 1:1 template before creating the production plate and KiCad PCB.
