@@ -27,6 +27,16 @@ The project should maximize useful learning and hands-on engineering rather than
 ## Layout preference
 ISO-ES with familiar letter positions and a conventional overall typing experience.
 
+## Current B3 key-layout baseline (approved 2026-10-18)
+Use the **B3 expanded-navigation** working layout instead of former G1R+/B1 candidates:
+- rectangular straight keyfield, nominally **17u × 5 rows** (323.85 × 95.25 mm at 19.05 mm pitch), excluding housing and display/encoder reserve
+- integrated inverted-T physical arrow keys and expanded navigation keys
+- **Backspace 2u**, **Space 5.75u**
+- omit physical `º/ª`; target `Fn + Esc` for `º` and `Fn + Shift + Esc` for `ª`, subject to firmware/host verification
+- standard ISO Enter and Ñ kept; check actual ISO Enter switch and stabilizers before fabrication
+
+This is an **approved layout choice**, not approval of switch-center coordinates, 5.75u keycap availability, mounting, PCB or final case envelope.
+
 ## General form factor
 Approximately 65%, while allowing research into moderate ergonomic geometry.
 
@@ -120,7 +130,11 @@ Approximately €300.
 No personal 3D printer; use external prototype/manufacturing services.
 
 ## Acoustic target
-Premium, controlled, deep and office-appropriate.
+**Profile B — Premium equilibrado:** firm but comfortable typing, deep and defined sound, controlled resonances and office-appropriate output. To be verified in physical prototypes.
+
+## CAD master tool
+**FreeCAD 1.1.4** selected for mechanical source geometry, sketches and parametrized generation; **KiCad** remains the PCB tool. Local master filename: `hardware/mechanical/freecad/DVN65_MasterLayout.FCStd`. The file is currently local and has not been uploaded to the GitHub repository.
+
 
 ---
 
@@ -134,8 +148,8 @@ The original legend may remain visible; the secondary legend must clearly appear
 ## Unibody semi-split / moderate column stagger
 Potential ergonomic direction if benefits justify the additional complexity.
 
-## G1R+ v5 geometry candidate
-Current Phase 1 working candidate for physical validation.
+## Historical G1R+ v5 geometry candidate (superseded)
+Previous Phase 1 semi-split working candidate; retained for history and future ergonomic comparison, but no longer the selected key-layout baseline.
 
 Direction:
 - approximately 65% ISO-ES
@@ -148,17 +162,23 @@ Direction:
 - Context Display at the upper edge of the right control area
 - push rotary encoder below the display
 
-This is an **experimental geometry candidate**, not the final geometry decision. It must be validated with 1:1 physical testing before PCB/mechanical commitment.
+This remains a **historical experimental geometry candidate**, not the current CAD reference. The newer B3 straight rectangular layout supersedes it as the working baseline; neither design establishes verified ergonomics.
 
 ## Thumb cluster
-May replace or divide parts of a traditional long spacebar if it improves ergonomics without imposing a large learning curve.
+Previous split-space research remains open as historical exploration; the currently selected B3 uses a single **5.75u** spacebar.
+
+## Acoustic / suspension stack hypothesis
+Gasket mount with controlled compression; initial **1.5 mm FR4 plate**, optional aluminium alternative, removable PORON gasket and selectable foam/PORON/EVA; candidate aluminium CNC case. These are **experimental material and mechanical selections**, to be validated for sound, feel, weight, manufacturability and budget.
+
+## Display / encoder case integration
+Current direction: single clean rectangular housing, compact right-side reservation, screen above and push encoder below/near the arrow-side controls. Physical envelope, mounting and final display size are not frozen.
 
 ---
 
 # TBD — RESEARCH REQUIRED
 
-## Final geometry
-Conventional 65% vs unibody semi-split vs moderate stagger.
+## Final manufacturing geometry
+B3 key allocation is selected, but production switch centers, ISO Enter footprint, stabilizer locations, plate openings, case outline and overall display/encoder width require verification.
 
 ## MCU
 Must be selected after real I/O and memory requirements are known.
@@ -198,20 +218,17 @@ Need electrical and firmware safety analysis.
 ## DVN Protocol transport
 Potentially USB HID / Raw HID.
 
-## CAD software
-Prefer open-source when viable.
-
 ## Mounting system
-TBD.
+Gasket is the current **prototype hypothesis**, not final mounting confirmation.
 
 ## Plate material
-TBD.
+FR4 1.5 mm prototype target; aluminium alternate. Validate compatibility with the switch mounting and gasket retention system.
 
 ## Case material
-TBD.
+CNC aluminium candidate; weight, final cost and prototyping route remain TBD.
 
-## Stabilizers
-TBD.
+## Stabilizers / uncommon keycaps
+Verify ISO Enter, Backspace 2u and especially Space 5.75u compatibility and stabilizer spacing/availability; no parts ordered or approved yet.
 
 ## Final switches
 TBD.
