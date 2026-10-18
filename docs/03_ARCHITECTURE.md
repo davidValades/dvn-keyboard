@@ -56,6 +56,15 @@ The main keyboard PCB is responsible for:
 
 MCU is not yet selected.
 
+### Mechanical layout / PCB handoff (Phase 1 selected direction)
+
+- Use **B3 expanded-navigation ISO-ES** with physical inverted-T arrows as the selected key-layout allocation; screen and push encoder remain to be packaged in the right-side region of a single rectangular enclosure.
+- Nominal keyfield is **17u × 5 rows**, 19.05 mm pitch, Backspace 2u and Space 5.75u; special switch/stabilizer positioning still requires validation.
+- **FreeCAD 1.1.4** is the mechanical geometry master; **KiCad** is the PCB authority for MX 5-pin footprints, hot-swap sockets, diodes, traces and matrix routing. Share a consistent coordinate origin and verify alignment before board fabrication.
+- The nominal MX plate cutout (initially 14 × 14 mm) is distinct from the 5-pin MX switch holes and hot-swap socket footprint on the PCB.
+- Working *mechanical hypothesis*, not frozen architecture: gasket-supported FR4 plate, optional alternate plate and removable damping; target feel/sound is **Premium equilibrado**.
+- The screen and encoder should be rigidly supported in the case or a suitable bracket, rather than assuming they can hang from a flexible gasket plate.
+
 ## 2. Firmware layer
 Base: QMK unless later research justifies a change.
 
